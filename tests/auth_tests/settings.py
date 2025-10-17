@@ -1,21 +1,14 @@
-import os
-
-AUTH_MIDDLEWARE = [
-    "django.contrib.sessions.middleware.SessionMiddleware",
-    "django.contrib.auth.middleware.AuthenticationMiddleware",
-]
-
-AUTH_TEMPLATES = [
-    {
-        "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(os.path.dirname(__file__), "templates")],
-        "APP_DIRS": True,
-        "OPTIONS": {
-            "context_processors": [
-                "django.template.context_processors.request",
-                "django.contrib.auth.context_processors.auth",
-                "django.contrib.messages.context_processors.messages",
-            ],
-        },
-    }
-]
+chat_project/        <-- Loyihaning asosiy papkasi
+├── manage.py         <-- Loyihani ishga tushirish fayli
+├── chat_project/     <-- Loyihaning ichki papkasi (project papkasi)
+│   ├── __init__.py
+│   ├── settings.py   <-- Shu faylga yozamiz
+│   ├── urls.py
+│   ├── asgi.py
+│   └── wsgi.py
+├── chat/             <-- Sizning chat ilovangiz
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   ├── consumers.py
+│   └── templates/chat/index.html
